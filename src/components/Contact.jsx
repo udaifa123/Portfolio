@@ -26,9 +26,6 @@ function Contact() {
       (error) => {
         console.error(error);
         btn.textContent = 'Error!';
-        setTimeout(() => {
-          btn.textContent = 'Send Message';
-        }, 3000);
       }
     );
   };
@@ -43,7 +40,6 @@ function Contact() {
 
       <div className="contact-grid reveal">
 
-        {/* LEFT SIDE */}
         <div className="contact-info">
           <h3>Open to Full Stack Developer opportunities</h3>
           <p>
@@ -60,34 +56,15 @@ function Contact() {
           </div>
         </div>
 
-        {/* FORM */}
         <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
-          
-          <input 
-            type="text" 
-            name="name" 
-            placeholder="Your Name" 
-            required 
-          />
 
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Your Email" 
-            required 
-          />
+          <input type="text" name="name" placeholder="Your Name" required />
 
-          <input 
-            type="text" 
-            name="subject" 
-            placeholder="Subject" 
-          />
+          <input type="email" name="email" placeholder="Your Email" required />
 
-          <textarea 
-            name="message" 
-            placeholder="Message" 
-            required
-          ></textarea>
+          <input type="text" name="subject" placeholder="Subject" />
+
+          <textarea name="message" placeholder="Message" required></textarea>
 
           <button type="submit" className="btn-submit">
             <span>Send Message</span>
