@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://udaifa123.github.io/Portfolio",
-
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -13,8 +12,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "emailjs-com": "^3.2.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },

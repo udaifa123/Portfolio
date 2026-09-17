@@ -1,27 +1,34 @@
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 function Contact() {
+
+  const formRef = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const btn = formRef.current.querySelector('.btn-submit span');
+
     emailjs.sendForm(
-      'service_udaifa',     // replace
-      'template_36luc06',    // replace
-      e.target,
-      'y_AtIVbdLcypt1SyF'      // replace
+      'service_udaifa',
+      'template_36luc06',
+      formRef.current,
+      'y_AtIVbdLcypt1SyF'
     ).then(
       () => {
-        const btn = e.target.querySelector('.btn-submit span');
         btn.textContent = 'Message Sent!';
         setTimeout(() => {
           btn.textContent = 'Send Message';
-          e.target.reset();
+          formRef.current.reset();
         }, 3000);
       },
       (error) => {
-        alert('Failed to send message. Try again.');
         console.error(error);
+        btn.textContent = 'Error!';
+        setTimeout(() => {
+          btn.textContent = 'Send Message';
+        }, 3000);
       }
     );
   };
@@ -36,9 +43,13 @@ function Contact() {
 
       <div className="contact-grid reveal">
 
+        {/* LEFT SIDE */}
         <div className="contact-info">
           <h3>Open to Full Stack Developer opportunities</h3>
-          <p>Actively seeking entry-level or junior developer roles. Available for immediate joining.</p>
+          <p>
+            Actively seeking entry-level or junior developer roles.
+            Available for immediate joining.
+          </p>
 
           <div className="contact-item">
             <strong>Email:</strong> udaifakk509@gmail.com
@@ -49,21 +60,40 @@ function Contact() {
           </div>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit}>
-  
-  <input type="text" name="name" placeholder="Your Name" required />
-  
-  <input type="email" name="email" placeholder="Your Email" required />
-  
-  <input type="text" name="subject" placeholder="Subject" />
-  
-  <textarea name="message" placeholder="Message" required></textarea>
+        {/* FORM */}
+        <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+          
+          <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name" 
+            required 
+          />
 
-  <button type="submit" className="btn-submit">
-    <span>Send Message</span>
-  </button>
+          <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email" 
+            required 
+          />
 
-</form>
+          <input 
+            type="text" 
+            name="subject" 
+            placeholder="Subject" 
+          />
+
+          <textarea 
+            name="message" 
+            placeholder="Message" 
+            required
+          ></textarea>
+
+          <button type="submit" className="btn-submit">
+            <span>Send Message</span>
+          </button>
+
+        </form>
 
       </div>
     </section>
