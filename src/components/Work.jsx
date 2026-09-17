@@ -3,6 +3,7 @@ import zafafImg from '../assets/ZafaF.png';
 import ilhamImg from '../assets/Ilham.png';
 import sqlImg from '../assets/sql-project.png';   // ADD THIS
 import dockerImg from '../assets/ZafaF.png';     // ADD THIS (create image)
+import NoorManzilImg from '../assets/NoorManzil.png'
 
 function Work() {
   return (
@@ -131,6 +132,94 @@ function Work() {
             </a>
           </div>
         </div>
+
+
+        {/* PROJECT 4 - NEXT.JS 🔥 */}
+<div className="work-card">
+  <div className="work-card-thumb">
+    <img src={NoorManzilImg} alt="Noormanzil Project" />
+  </div>
+
+  <div className="work-card-body">
+    <h3>Noormanzil – Next.js E-Commerce</h3>
+
+    <p>
+      Built a full-stack e-commerce application using Next.js App Router
+      with dynamic routing, authentication, and API integration.
+    </p>
+
+    <p>
+      Implemented protected routes, product management, and responsive UI
+      for a seamless user experience.
+    </p>
+
+    <p><strong>Tech:</strong> Next.js, TypeScript, MongoDB</p>
+
+    <p><strong>Deployment:</strong> Vercel</p>
+
+    <a 
+      href="https://nextjs-home-decor-store-five.vercel.app/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      Live
+    </a> | 
+
+    <a 
+      href="https://github.com/udaifa123/nextjs-home-decor-store" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
+
+
+        {/* PROJECT 5 - TEAMFLOW (SQL + AWS) 🔥 */}
+<div className="work-card">
+  <div className="work-card-thumb">
+    <img src={sqlImg} alt="TeamFlow Project" />
+  </div>
+
+  <div className="work-card-body">
+    <h3>TeamFlow – Project Management System</h3>
+
+    <p>
+      Designed a PostgreSQL-based project management system with normalized schema,
+      optimized queries, and structured data relationships.
+    </p>
+
+    <p>
+      Deployed the application on AWS EC2 with server setup, environment configuration,
+      and live hosting.
+    </p>
+
+    <p><strong>Tech:</strong> PostgreSQL, SQL</p>
+
+    <p>
+      <strong>Concepts:</strong> Joins, CTEs, Views, Indexing, Constraints
+    </p>
+
+    <p><strong>Deployment:</strong> AWS EC2 (Live Application)</p>
+
+    <a 
+      href="https://teamflow1.duckdns.org/" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      Live (AWS)
+    </a> | 
+
+    <a 
+      href="https://github.com/udaifa123/Teamflow" 
+      target="_blank" 
+      rel="noopener noreferrer"
+    >
+      GitHub
+    </a>
+  </div>
+</div>
 
       </div>
     </section>
