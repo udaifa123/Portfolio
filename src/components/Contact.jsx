@@ -12,7 +12,7 @@ function Contact() {
 
     emailjs.sendForm(
       'service_udaifa',
-      'template_36luc06',
+      'template_rcko2g8',
       formRef.current,
       'y_AtIVbdLcypt1SyF'
     ).then(
